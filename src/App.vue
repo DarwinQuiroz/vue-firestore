@@ -1,12 +1,31 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+  <main>
+    <v-app>
+      <v-content>
+        <guest-navigation/>
+
+        <v-container class="mt-3 mb-5">
+          <router-view />
+        </v-container>
+
+          <app-footer/>
+
+      </v-content>
+    </v-app>
+  </main>
 </template>
+
+<script>
+  import GuestNavigation from "./components/navigations/guest";
+  import AppFooter from "./components/footer";
+  export default {
+    components: {
+        AppFooter,
+      GuestNavigation
+
+    }
+  }
+</script>
 
 <style>
 #app {
